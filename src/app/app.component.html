@@ -1,35 +1,51 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 px-0">
       <img
-        class="img-fluid"
+        class="img-fluid h-100"
         style="width: 100vw; height: 100vh"
         src="\assets\images\image2.png"
         alt="form-image"
       />
     </div>
-    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-      <div class="header"></div>
+    <div
+      class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 position-relative px-0"
+    >
+      <div
+        class="header sticky-xl-top sticky-lg-top sticky-md-top sticky-sm-top"
+      ></div>
       <div class="row justify-content-center mt-5">
         <img
-          class="img-fluid"
+          class="img-fluid w-25 p-1"
           src="\assets\images\image3.png"
           alt="form-logo"
         />
       </div>
       <form class="p-5">
-        <h3>Register</h3>
-        <div class="row">
+        <h3 class="mt-4">Register</h3>
+        <div class="row mt-4">
           <div class="col">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" placeholder="First name" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              required
+              minlength="4"
+            />
           </div>
           <div class="col">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" placeholder="Last name" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              required
+              minlength="4"
+            />
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group mt-4">
           <label for="exampleInputEmail1">Email address</label>
           <input
             type="email"
@@ -37,50 +53,62 @@
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Your Email Address"
+            required
+            size="32"
+            minlength="3"
+            maxlength="64"
           />
         </div>
-        <div class="form-group">
+        <div class="form-group mt-4">
           <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Your Password"
+            required
+            size="32"
+            minlength="5"
+            maxlength="25"
           />
         </div>
 
-        <div class="form-check form-switch">
+        <div class="form-check form-switch mt-4">
           <input
             class="form-check-input"
             type="checkbox"
             id="flexSwitchCheckDefault"
           />
           <label class="form-check-label" for="flexSwitchCheckDefault"
-            >I accept the <span>Terms of Service</span> as well as
-            <span>Privacy Policy</span>
+            >I accept the <span class="text-primary">Terms of Service</span> as
+            well as
+            <span class="text-primary">Privacy Policy</span>
           </label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Create Account</button>
+        <button type="submit" class="btn btn-primary mt-4 mb-4">
+          Create Account
+        </button>
         <div class="col-xs"><hr /></div>
-        <div class="row justify-content-center">
-          Already have an account? Login now.
+        <div class="nav justify-content-center mt-4 text-secondary">
+          Already have an account?
+          <span class="fw-bold text-primary">Login now.</span>
         </div>
 
         <div class="container">
-          <div class="row text-center mt-5" style="color: gray">
+          <div class="row text-center" style="color: gray">
             <div class="col">Help</div>
             <div class="col">Legal</div>
             <div class="col">Privacy</div>
             <div class="col">TOS</div>
           </div>
-          <div class="row justify-content-center mt-0" style="color: gray">
+          <div class="row justify-content-center mb-5" style="color: gray">
             @Cloudklabauter
           </div>
         </div>
       </form>
-      <div class="footer"></div>
+      <div class="footer position-absolute fixed-bottom"></div>
     </div>
   </div>
 </div>
-<!-- color:rgb(21, 115, 192) -->
+<!-- https://mdbootstrap.com/docs/angular/forms/validation/#docsTabsOverview -->

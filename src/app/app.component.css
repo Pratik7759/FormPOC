@@ -1,54 +1,16 @@
-.col-12 {
-  padding-right: 0px;
-  padding-left: 0px;
+.header {
+  background-color: black;
+  height: 81px;
+  width: 100%;
+  opacity: 0.15;
 }
-.form-check-label span{
-    color:rgb(7, 213, 250);
+.footer {
+  background-color: black;
+  height: 81px;
+  width: 100%;
+  opacity: 0.15;
 }
-
-.form-group{
-    margin-top:30px;
-}
-h3{
-    margin-top:20px;
-}
-
-form .row {
-    margin-top: 30px;
-}
-.form-check {
-    margin-top:30px;
-}
-.btn{
-    margin-top: 30px;
-}
-
-.row  img.img-fluid{
-    width: 200px;
-  
-}
-/* form{ */
-    /* background-color: antiquewhite; */
-
-/* } */
-.header{
-    background-color: black;
-    height:60px;
-    width:100%;
-   
-    opacity: 0.1;
-}
-.footer{
-    background-color: black;
-    height:60px;
-    width:100%;
-   margin-bottom: 0;
-    opacity: 0.1;
-}
-.col-6.col-xs-6.col-sm-6.col-md-6.col-lg-6.col-xl-6 {
-    padding: 0px;
-}
-
 .container {
-    width: 50%;
+  width: 50%;
+  margin-top: 350px;
 }
