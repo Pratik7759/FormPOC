@@ -14,12 +14,26 @@
   width: 50%;
   margin-top: 350px;
 }
-input:invalid{
-    border:1px black rgb(172, 13, 13);
+/* input:invalid{
+    border:1px black;
 }
 input:invalid:required{
     background-image: linear-gradient(to right,rgb(245, 238, 238),rgb(221, 211, 211));
 }
 input:valid{
     border:2px solid green;
+} */
+input.ng-invalid.ng-touched {
+  border: 1px solid rgb(201, 21, 21);
+}
+input.ng-valid.ng-touched {
+  border: 1px solid rgb(21, 145, 48);
+}
+.help-block {
+  color: rgb(201, 21, 21);
+}
+@media screen and (max-width: 576px) {
+  .img-main{
+    display:none;
+  }
 }
