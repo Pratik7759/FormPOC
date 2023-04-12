@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +14,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'FormPOC';
   signupForm: any = FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
+  employeeDetailsForm = this.fb.group({
+    firstName: [
+      '',
+      Validators.required,
+      Validators.pattern('^[a-zA-Z][a-zA-Z ]+'),
+      Validators.minLength(3),
+    ],
+    lastName: [
+      '',
+      Validators.required,
+      Validators.pattern('^[a-zA-Z][a-zA-Z ]+'),
+      Validators.minLength(3),
+    ],
+    email: ['', Validators.required, Validators.email],
+    password: [
+      '',
+      Validators.required,
+      Validators.pattern(
+        '(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}'
+      ),
+    ],
+    confirmpassword: [
+      '',
+      Validators.required,
+      Validators.pattern(
+        '(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}'
+      ),
+    ],
+  });
 
   ngOnInit() {
     this.signupForm = new FormGroup({

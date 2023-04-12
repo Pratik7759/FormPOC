@@ -32,17 +32,57 @@
               placeholder="First name"
               id="firstName"
               formControlName="firstname"
-             
             />
-            <span
+            <!-- <span
               *ngIf="
                 !signupForm.get('firstname').valid &&
                 signupForm.get('firstname').touched
               "
               class="help-block"
               >Please enter a valid first name!</span
+            > -->
+
+            <div
+              *ngIf="
+                signupForm.get('firstname').invalid &&
+                signupForm.get('firstname').errors &&
+                (signupForm.get('firstname').dirty ||
+                  signupForm.get('firstname').touched)
+              "
             >
-         
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('firstname').hasError('required')"
+              >
+                This field is required.
+              </small>
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('firstname').hasError('pattern')"
+              >
+                Please don't type numbers in name.
+              </small>
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('firstname').hasError('minlength')"
+              >
+                The minimum length for this field is
+                {{
+                  signupForm.get("firstname").errors.minlength.requiredLength
+                }}
+                characters.
+              </small>
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('firstname').hasError('maxlength')"
+              >
+                The maximum length for this field is
+                {{
+                  signupForm.get("firstname").errors.maxlength.requiredLength
+                }}
+                characters.
+              </small>
+            </div>
           </div>
           <div class="col form-group">
             <label for="lastName">Last Name</label>
@@ -53,14 +93,51 @@
               id="lastName"
               formControlName="lastname"
             />
-            <span
+            <!-- <span
               *ngIf="
                 !signupForm.get('lastname').valid &&
                 signupForm.get('lastname').touched
               "
               class="help-block"
               >Please enter a valid last name!</span
+            > -->
+            <div
+              *ngIf="
+                signupForm.get('lastname').invalid &&
+                signupForm.get('lastname').errors &&
+                (signupForm.get('lastname').dirty ||
+                  signupForm.get('lastname').touched)
+              "
             >
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('lastname').hasError('required')"
+              >
+                This field is required.
+              </small>
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('lastname').hasError('pattern')"
+              >
+                Please don't type numbers in name.
+              </small>
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('lastname').hasError('minlength')"
+              >
+                The minimum length for this field is
+                {{ signupForm.get("lastname").errors.minlength.requiredLength }}
+                characters.
+              </small>
+              <small
+                class="text-danger"
+                *ngIf="signupForm.get('lastname').hasError('maxlength')"
+              >
+                The maximum length for this field is
+                {{ signupForm.get("lastname").errors.maxlength.requiredLength }}
+                characters.
+              </small>
+            </div>
           </div>
         </div>
         <div class="form-group mt-4">
@@ -90,6 +167,14 @@
             placeholder="Your Password"
             formControlName="password"
           />
+          <span
+            *ngIf="
+              !signupForm.get('password').valid &&
+              signupForm.get('password').touched
+            "
+            class="help-block"
+            >Please enter a valid password !</span
+          >
         </div>
         <div class="form-group mt-4">
           <label for="exampleInputPassword1">Confirm Password</label>
@@ -100,6 +185,14 @@
             placeholder="Your Password"
             formControlName="confirmpassword"
           />
+          <span
+            *ngIf="
+              !signupForm.get('confirmpassword').valid &&
+              signupForm.get('confirmpassword').touched
+            "
+            class="help-block"
+            >Please enter a valid password !</span
+          >
         </div>
 
         <div class="form-check form-switch mt-4">
@@ -120,7 +213,11 @@
           </label>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-4 mb-4">
+        <button
+          type="submit"
+          class="btn btn-primary mt-4 mb-4"
+          [disabled]="signupForm.invalid"
+        >
           Create Account
         </button>
         <div class="col-xs"><hr /></div>
